@@ -19,7 +19,6 @@ module RickAndMorty
 
   def save_image(hero, path)
     unless File.exists?(path)
-      binding.pry
       puts "Creating directory"
       FileUtils.mkdir_p(path)
     end
