@@ -1,24 +1,30 @@
 # RickAndMorty
-Short description and motivation.
+Simple engine for learning about Rails Engines.
 
 ## Usage
 How to use my plugin.
+```ruby
+rake rick_and_morty[hero_name]
+```
+
+## Example
+```ruby
+rake rick_and_morty["Rick"]
+```
+# Roadmap
+After running rake task check your ```{your_app}/public/rick_and_morty/``` folder and find picture of hero that you specify.
+Enjoy ;)
 
 ## Installation
 Add this line to your application's Gemfile:
 
 ```ruby
-gem 'rick_and_morty'
+gem 'rick_and_morty', git: 'git@github.com:oleg1998/rick_and_morty.git'
 ```
 
 And then execute:
 ```bash
-$ bundle
-```
-
-Or install it yourself as:
-```bash
-$ gem install rick_and_morty
+$ bundle install
 ```
 
 ## Contributing
