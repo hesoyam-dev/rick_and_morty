@@ -3,7 +3,6 @@ require 'net/http'
 require 'open-uri'
 require 'json'
 require 'fileutils'
-require 'pry'
 
 module RickAndMorty
   def get_heroes
@@ -22,10 +21,11 @@ module RickAndMorty
       puts "Creating directory"
       FileUtils.mkdir_p(path)
     end
-    path = "#{path}#{hero[:name].underscore}#{hero[:image][((hero[:image] =~ /.\.(png|jpeg|jpg|gif)$/) + 1)..-1]}"
+    path = "#{path}#{hero[:name].underscore.gsub(' ', '_')}#{hero[:image][((hero[:image] =~ /.\.(png|jpeg|jpg|gif)$/) + 1)..-1]}"
     File.open(path, 'wb') do |fo|
       puts "Saving image - #{path}"
       fo.write open(hero[:image]).read
     end
+    system("open #{path}")
   end
 end
